@@ -4,6 +4,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
         <script type="text/javascript">
+            if(typeof fs !== 'undefined'){
+                console.log = fs.log
+            }
+
             window.onload = function()
             {
                 document.getElementById("quit").onmousedown = function()
@@ -11,6 +15,7 @@
                     Qt.quit();
                 };
 
+                console.log('test logging');
                 alert(fs.test());
             }
         </script>

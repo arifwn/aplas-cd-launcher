@@ -13,6 +13,7 @@ public:
 
     explicit FileSystem(QObject *parent = 0);
     Q_INVOKABLE QString test();
+    Q_INVOKABLE void log(QString s);
 
 signals:
 

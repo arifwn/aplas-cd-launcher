@@ -1,4 +1,4 @@
-#include <iostream>
+#include <QDebug>
 
 #include "filesystem.h"
 
@@ -9,12 +9,17 @@ FileSystem::FileSystem(QObject *parent) :
 
 void FileSystem::addToJavaScript()
 {
-    std::cout << "registering fs" << std::endl;
+    qDebug() << "registering fs";
     graphicWebView->page()->mainFrame()->addToJavaScriptWindowObject("fs", this);
 }
 
 QString FileSystem::test()
 {
-    std::cout << "invoking test()" << std::endl;
+    qDebug() << "invoking test()";
     return QString("hello world!");
+}
+
+void FileSystem::log(QString s)
+{
+    qDebug() << s;
 }
