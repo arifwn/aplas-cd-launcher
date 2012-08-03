@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
         <script type="text/javascript">
             if(typeof fs !== 'undefined'){
-                console.log = fs.log
+                console.log = fs.log;
             }
 
             window.onload = function()
@@ -16,7 +16,11 @@
                 };
 
                 console.log('test logging');
-                alert(fs.test());
+                data = fs.test();
+                console.log(data);
+                for(var i=0; i<data.length; i++){
+                    alert(data[i]);
+                }
             }
         </script>
     </head>

@@ -13,10 +13,23 @@ void FileSystem::addToJavaScript()
     graphicWebView->page()->mainFrame()->addToJavaScriptWindowObject("fs", this);
 }
 
-QString FileSystem::test()
+QVariantList FileSystem::test()
 {
     qDebug() << "invoking test()";
-    return QString("hello world!");
+    QVariantList l;
+    #ifdef Q_WS_X11
+    QString s1 = QString("hello Linux!");
+    #elif Q_WS_WIN
+    QString s1 = QString("hello Windows!");
+    #elif Q_WS_MACX
+    QString s1 = QString("hello OSX!");
+    #endif
+
+    int s2 = 9000;
+
+    l.append(qVariantFromValue(s1));
+    l.append(qVariantFromValue(s2));
+    return l;
 }
 
 void FileSystem::log(QString s)

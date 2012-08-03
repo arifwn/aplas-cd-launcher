@@ -12,7 +12,7 @@ public:
     QGraphicsWebView * graphicWebView;
 
     explicit FileSystem(QObject *parent = 0);
-    Q_INVOKABLE QString test();
+    Q_INVOKABLE QVariantList test();
     Q_INVOKABLE void log(QString s);
 
 signals:
