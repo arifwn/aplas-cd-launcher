@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
     QObject::connect(fs.graphicWebView->page()->mainFrame(), SIGNAL(javaScriptWindowObjectCleared()),
                      &fs, SLOT(addToJavaScript()));
 
-    viewer.resize(700, 500);
+    viewer.setWindowTitle("APLAS Bali 2012");
+    viewer.resize(940, 500);
     viewer.setOrientation(Html5ApplicationViewer::ScreenOrientationAuto);
     viewer.showExpanded();
     viewer.loadFile(QLatin1String("html/index.html"));

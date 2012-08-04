@@ -1,5 +1,5 @@
 BOOTSTRAP = ./css/main.css
-BOOTSTRAP_LESS = ./less/main-responsive.less
+BOOTSTRAP_LESS = ./less/main.less
 JS_DIR = ./js
 COFFEE_FILES = ./coffee/*.coffee
 DATE=$(shell date +%I:%M%p)

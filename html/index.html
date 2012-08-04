@@ -3,31 +3,119 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
+        <script src="static/js/jquery.js"></script>
+        <script src="static/js/bootstrap-dropdown.js"></script>
+        <script src="static/js/bootstrap-modal.js"></script>
+        <script src="static/js/bootstrap-tab.js"></script>
+        <script src="static/js/bootstrap-transition.js"></script>
+        <script src="static/js/main.js"></script>
+        <title>APLAS - The 7th Asian Pacific Landfill Symposium</title>
+        <link rel="shortcut icon" href="static/img/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="static/img/favicon.ico" />
+        <meta name="description" content="The 7th Asian Pacific Landfill Symposium. Sustainable Solid Waste Management for a Better Life." />
+
         <script type="text/javascript">
             if(typeof fs !== 'undefined'){
                 console.log = fs.log;
             }
-
-            window.onload = function()
-            {
-                document.getElementById("quit").onmousedown = function()
-                {
-                    Qt.quit();
-                };
-
-                console.log('test logging');
-                data = fs.test();
-                console.log(data);
-                for(var i=0; i<data.length; i++){
-                    alert(data[i]);
-                }
-            }
         </script>
     </head>
-    <body>
-        <a id="quit">X</a>
-        <h1>Hello</h1>
-        <h1>HTML5</h1>
-        <h1>World</h1>
+    <body lang="en-us">
+        <div class="container-fluid">
+            <div class="header homepage">
+                <a class="mainlogo"><img src="static/img/aplas-front-logo.png" alt="APLAS" /></a>
+                <h2 class="logotitle"><span style="display: none;">APLAS </span><span class="alt1">BALI</span> <span class="alt2">2012</span></h2>
+                <div class="titlearea">
+                    <div class="row">
+                        <div class="span10 offset2">
+                            <h1>The <span class="alt2">7<sup>th</sup></span> Asian Pacific Landfill Symposium</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span10 offset2">
+                            <h2 class="line">Sustainable Solid Waste Management for a Better Life</h2>
+                            <h3 class="date">October <span class="alt2">8<sup>th</sup></span> &mdash; <span class="alt2">11<sup>th</sup></span>, 2012</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4 offset8 organizer-container">
+                            <h4 class="organized-by">Organized by:</h4>
+                            <ul class="organizer-list">
+                                <li class="organizer pu">
+                                    <a class="logo" title="Ministry of Public Works Republic of Indonesia"><img src="static/img/pu-logo-60.png" alt="Ministry of Public Works Republic of Indonesia" /></a>
+                                </li>
+                                <li class="organizer itb">
+                                    <a class="logo" title="Institut Teknologi Bandung"><img src="static/img/itb-logo-60.png" alt="Institut Teknologi Bandung" /></a><br />
+                                </li>
+                                <li class="organizer iatpi">
+                                    <a class="logo" title="Indonesian Society for Sanitary and Environmental Engineers"><img src="static/img/iatpi-logo-50.png" alt="Indonesian Society of Sanitary and Environmental Engineers" /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+            
+                <div class="mainmenu-container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="mainmenu">
+                                <li class="active"><a href="#">Proceeding</a></li>
+                                <li class=""><a href="#">Other Menu</a></li>
+                                <li class=""><a href="#">Another Menu</a></li>
+                                <li class="dropdown ">
+                                    <a href="#">Another Menu <b class="caret"></b></a>
+                                    <ul id="dropmenu-paper" class="dropdown-menu">
+                                        <li class=""><a href="#">Another Submenu</a></li>
+                                        <li class=""><a href="#">Another Submenu</a></li>
+                                        <li class="divider"></li>
+                                        <li class=""><a href="#">Another Submenu</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="content homepage">
+                <div class="row">
+                    <div class="span12">
+                        <h2>Contents Here</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="footer row">
+                <div class="span12">
+                    <div class="content">
+                        <p>APLAS 2012 is a production of <em>Ministry of Public Works</em>, <em>State Ministry of Environment</em>, <em>Institut Teknologi Bandung</em>, <em>Indonesian Society for Sanitary and Environmental Engineers</em>, and <em>The Landfill Systems &amp; Technologies Research Association of Japan</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(function(){
+        
+        $('li.dropdown > a').click(function(e){
+        e.preventDefault();
+        $(e.target).parent().toggleClass('open');
+        });
+        
+        $('.dropdown-menu a').click(function(e){
+        $('li.dropdown').removeClass('open');
+        });
+        
+        $('a[data-activate-form="register"]').click(function(e){
+        e.preventDefault();
+        $('#register-modal').modal('show');
+        });
+        
+        $('a[data-activate-form="paper"]').click(function(e){
+        e.preventDefault();
+        $('#paper-modal').modal('show');
+        });
+    });
+        </script>
     </body>
 </html>
